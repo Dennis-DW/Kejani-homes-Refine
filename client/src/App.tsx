@@ -153,7 +153,7 @@ function App() {
               icon: <VillaOutlined />,
             },
             {
-              name: "Landlords",
+              name: "Landlords/Agents",
               list: Landlord,
               show: LandlordProfile,
               icon: <PeopleOutline />,

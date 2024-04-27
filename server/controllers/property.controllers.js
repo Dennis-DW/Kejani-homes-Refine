@@ -141,8 +141,52 @@ const getPropertyDetail = async (req, res) => {
   }
 };
 
-const updateProperty = async (req, res) => {};
-const deleteProperty = async (req, res) => {};
+const updateProperty = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { title, description, propertyType, location, price, photo } =
+      req.body;
+
+    const photoUrl = await cloudinary.uploader.upload(photo);
+
+    await Property.findByIdAndUpdate(
+      { _id: id },
+      {
+        title,
+        description,
+        propertyType,
+        location,
+        price,
+        photo: photoUrl.url || photo,
+      }
+    );
+    res.status(200).json({ message: "Property Details Updated!" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error Updating property details");
+  }
+};
+
+const deleteProperty = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const propertyToDel = await Property.findById({
+      _id: id,
+    }).populate("creatorID");
+
+    if (!propertyToDel) throw new Error("Property Not Found");
+    const session = await mongoose.startSession();
+    propertyToDel.remove({ session });
+    propertyToDel.creatorID.allProperties.pull(propertyToDel);
+
+    await propertyToDel.creatorID.save({ session });
+    await session.commitTransaction();
+    res.status(200).json({ message: "Property Removed/Deleted Successfully" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error Deleting property details");
+  }
+};
 
 export {
   getAllProperties,
