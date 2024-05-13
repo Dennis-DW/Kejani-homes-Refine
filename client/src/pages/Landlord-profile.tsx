@@ -1,27 +1,41 @@
 import React from "react";
 import { useOne } from "@pankod/refine-core";
-import { Profile } from "components";
 import { useParams } from "@pankod/refine-react-router-v6";
+import { Profile } from "components";
 
-const LandlordProfile = () => {
+const LandLordProfile = () => {
   const { id } = useParams();
+
   const { data, isLoading, isError } = useOne({
-    resource: "api/v1/users",
+    resource: "users",
     id: id as string,
   });
-  const myProfile = data?.data ?? [];
-  if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>Error...</div>;
+  
+
+  const landLordProfile = data?.data ?? {};
+  // Validate user profile data
+  if (!landLordProfile.name || !landLordProfile.email || !landLordProfile.avatar || !landLordProfile.allProperties) {
+    return <div>User profile data is incomplete.</div>;
+  }
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>Something went wrong!</div>;
+  }
 
   return (
     <Profile
-      type="landlord"
-      name={myProfile.name}
-      email={myProfile.email}
-      avatar={myProfile.avatar}
-      properties={myProfile.allProperties}
+      type="Landlord Profile"
+      name={landLordProfile?.name}
+      avatar={landLordProfile?.avatar}
+      email={landLordProfile?.email}
+      properties={landLordProfile?.allProperties}
     />
   );
 };
 
-export default LandlordProfile;
+export default LandLordProfile;
+

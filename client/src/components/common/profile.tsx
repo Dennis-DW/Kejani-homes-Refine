@@ -1,6 +1,6 @@
 import { Email, Phone, Place } from "@mui/icons-material";
 import { Box, Stack, Typography } from "@pankod/refine-mui";
-
+import Kejani from "../../assets/kejani.png";
 import { ProfileProps, PropertyProps } from "interfaces/common";
 import PropertyCard from "./propertyCard";
 
@@ -25,8 +25,7 @@ const MyProfile = ({ type, name, avatar, email, properties }: ProfileProps) => (
         }}
       >
         <img
-          src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
-          width={340}
+          src={Kejani}
           height={320}
           alt="abstract"
           className="my_profile-bg"
@@ -162,4 +161,4 @@ const MyProfile = ({ type, name, avatar, email, properties }: ProfileProps) => (
   </Box>
 );
 
-export default MyProfile ;
+export default MyProfile;

@@ -139,7 +139,7 @@ const Form = ({
                 {...register("price", { required: true })}
                 type="number"
                 placeholder="Property Price"
-                id="propertyPrice" // Updated to a unique ID
+                id="propertyPrice" 
                 variant="outlined"
                 color="info"
                 fullWidth
@@ -163,7 +163,7 @@ const Form = ({
               color="info"
               required
               placeholder="Property Location"
-              id="propertyLocation" // Updated to a unique ID
+              id="propertyLocation" 
               variant="outlined"
               fullWidth
             />

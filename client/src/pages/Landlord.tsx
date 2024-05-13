@@ -5,11 +5,14 @@ import { LandlordCard } from "components";
 
 const Landlords = () => {
   const { data, isLoading, isError } = useList({
-    resource: "api/v1/users",
+    resource: "users",
   });
   const allLandlords = data?.data ?? [];
 
-  // alert(allLandlords[0].email);
+  // Check if allLandlords array is empty before accessing its first element
+  if (allLandlords.length === 0) {
+    return <div>No landlords found</div>;
+  }
 
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error...</div>;
@@ -31,9 +34,9 @@ const Landlords = () => {
           <LandlordCard
             key={Landlord._id}
             id={Landlord._id}
-            name={Landlord._name}
-            email={Landlord._email}
-            avatar={Landlord._avatar}
+            name={Landlord.name}
+            email={Landlord.email}
+            avatar={Landlord.avatar}
             noOfProperties={Landlord.allProperties.length}
           />
         ))}

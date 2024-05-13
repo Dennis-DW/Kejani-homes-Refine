@@ -26,7 +26,7 @@ app.use(limiter);
 
 // Routes
 app.get("/", (req, res) => {
- res.send({ message: "Hello World" });
+ res.send({ message: "Karibuni" });
 });
 
 // Add a route for /api/v1

@@ -62,6 +62,7 @@ const getAllProperties = async (req, res) => {
   }
 };
 
+// createProperty function to create a new property and add it to the creator's allProperties array
 const createProperty = async (req, res) => {
   const { title, description, propertyType, price, location, photo, email } =
     req.body;
@@ -120,8 +121,9 @@ const createProperty = async (req, res) => {
       .status(500)
       .json({ message: "Error creating property", error: error.message });
   }
-}; // End of createProperty
+};
 
+// Function to get the details of a single property
 const getPropertyDetail = async (req, res) => {
   const { id } = req.params;
 
@@ -141,52 +143,90 @@ const getPropertyDetail = async (req, res) => {
   }
 };
 
+// Update a property's details
 const updateProperty = async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, description, propertyType, location, price, photo } =
-      req.body;
+    const { title, description, propertyType, location, price, photo } = req.body;
 
-    const photoUrl = await cloudinary.uploader.upload(photo);
+    // Check if photo is provided
+    let updateData = {
+      title,
+      description,
+      propertyType,
+      location,
+      price,
+    };
 
-    await Property.findByIdAndUpdate(
-      { _id: id },
-      {
-        title,
-        description,
-        propertyType,
-        location,
-        price,
-        photo: photoUrl.url || photo,
-      }
-    );
-    res.status(200).json({ message: "Property Details Updated!" });
+    if (photo) {
+      // If photo is provided, upload it to cloudinary
+      const cloudinaryResponse = await cloudinary.uploader.upload(photo);
+      updateData.photo = cloudinaryResponse.url; // Update photoUrl with the cloudinary URL
+    }
+
+    // Find and update the property
+    const updatedProperty = await Property.findByIdAndUpdate(id, updateData, { new: true });
+
+    if (!updatedProperty) {
+      // If property with the given id is not found
+      return res.status(404).json({ message: "Property not found" });
+    }
+
+    // Respond with success message
+    res.status(200).json({ message: "Property Details Updated!", property: updatedProperty });
   } catch (error) {
     console.error(error);
     res.status(500).send("Error Updating property details");
   }
 };
 
+
+// Delete a property and remove it from the creator's allProperties array
 const deleteProperty = async (req, res) => {
   try {
     const { id } = req.params;
-    const propertyToDel = await Property.findById({
-      _id: id,
-    }).populate("creatorID");
+    // Find the property by ID and populate the creatorID field
+    const propertyToDel = await Property.findById(id).populate("creatorID");
 
-    if (!propertyToDel) throw new Error("Property Not Found");
+    if (!propertyToDel) {
+      throw new Error("Property Not Found");
+    }
+
+    // Start a new session
     const session = await mongoose.startSession();
-    propertyToDel.remove({ session });
-    propertyToDel.creatorID.allProperties.pull(propertyToDel);
+    session.startTransaction();
 
-    await propertyToDel.creatorID.save({ session });
-    await session.commitTransaction();
-    res.status(200).json({ message: "Property Removed/Deleted Successfully" });
+    try {
+      // Remove the property from the database
+      await propertyToDel.deleteOne({ session });
+
+      // Assuming `creatorID` is a reference to a User model and `allProperties` is an array of property IDs
+      // Remove the property from the creator's `allProperties` array
+      await propertyToDel.creatorID.allProperties.pull(propertyToDel._id);
+
+      // Save the creator's updated `allProperties` array
+      await propertyToDel.creatorID.save({ session });
+
+      // Commit the transaction
+      await session.commitTransaction();
+
+      // Respond with success message
+      res.status(200).json({ message: "Property Removed/Deleted Successfully" });
+    } catch (error) {
+      // If anything goes wrong, abort the transaction
+      await session.abortTransaction();
+      console.error(error);
+      res.status(500).send("Error Deleting property details");
+    } finally {
+      // Ensure the session is ended, even if an error occurs
+      session.endSession();
+    }
   } catch (error) {
     console.error(error);
     res.status(500).send("Error Deleting property details");
   }
 };
+
 
 export {
   getAllProperties,

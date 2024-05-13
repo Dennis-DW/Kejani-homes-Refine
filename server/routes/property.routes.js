@@ -19,7 +19,7 @@ router.route("/").post(createProperty);
 router.route("/:id").get(getPropertyDetail);
 
 // Route for updating a property by ID
-router.route("/:id").put(updateProperty);
+router.route("/:id").patch(updateProperty);
 
 // Route for deleting a property by ID
 router.route("/:id").delete(deleteProperty);

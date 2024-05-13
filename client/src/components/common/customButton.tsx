@@ -16,14 +16,14 @@ const customButton = ({
     <Button
       disabled={disabled}
       type={type === "submit" ? "submit" : "button"}
+    
       sx={{
         flex: fullWidth ? 1 : "unset",
         padding: "10px 20px",
         fontSize: 16,
         fontWeight: 600,
-        minWidth: 150,
         borderRadius: 8,
-        gap: 10,
+        gap: 2,
         backgroundColor: backgroundColor,
         color: color,
         width: fullWidth ? "100%" : "fit-content",

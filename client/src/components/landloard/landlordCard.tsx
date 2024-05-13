@@ -7,20 +7,20 @@ import { Link } from "@pankod/refine-react-router-v6";
 
 const InfoBar = ({ icon, name }: InfoBarProps) => (
   <Stack
-  flex={1}
-  minWidth={{xs:"100%",sm: 280}}
-  gap={1.5}
-  direction={"row"}
+    flex={1}
+    minWidth={{ xs: "100%", sm: 280 }}
+    gap={1.5}
+    direction={"row"}
   >
     {icon}
     <Typography
-    color={"#808191"}
-    fontSize={15}
+      color={"#808191"}
+      fontSize={15}
     >{name}</Typography>
   </Stack>
 );
 
-const landlordCard = ({
+const LandlordCard = ({
   id,
   name,
   email,
@@ -29,8 +29,8 @@ const landlordCard = ({
 }: LandlordCardProp) => {
   const { data: currentUser } = useGetIdentity();
   const generateLink = () => {
-    if (currentUser.email === email) return "/my-profile";
-    return `/landlords/show/${id}`;
+    if (currentUser.email === email) return "/MyProfile";
+    return `/landlords/Agents/show/${id}`;
   };
 
   return (
@@ -43,18 +43,19 @@ const landlordCard = ({
         flexDirection: { xs: "column", sm: "row" },
         gap: "20px",
         padding: "20px",
-        "&hover": {
+        "&:hover": {
           boxShadow: "0 20px 55px 4px rgba(176 ,176, 176,0.1)",
         },
       }}
     >
       <img
         src={avatar}
-        alt={name}
+        alt='User'
         width={95}
         height={95}
         style={{ borderRadius: 8, objectFit: "cover" }}
       />
+
       <Stack
         direction={"column"}
         justifyContent={"space-between"}
@@ -91,7 +92,7 @@ const landlordCard = ({
           />
           <InfoBar
             icon={<LocationCity sx={{ color: "#808191" }} />}
-            name={`${ noOfProperties} Properties`}
+            name={`${noOfProperties} Properties`}
           />
           <InfoBar
             icon={<Phone sx={{ color: "#808191" }} />}
@@ -103,4 +104,5 @@ const landlordCard = ({
   );
 };
 
-export default landlordCard;
+export default LandlordCard;
+
