@@ -94,7 +94,7 @@ const Home = () => {
             {/* Displaying each latest property as a card */}
             {latestProperties.map((property) => (
               <PropertyCard
-                key={property.id}
+                key={property._id}
                 id={property.id}
                 title={property.title}
                 price={property.price}
