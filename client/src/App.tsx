@@ -14,7 +14,7 @@ import {
   StarOutlineRounded,
   VillaOutlined,
 } from "@mui/icons-material";
-import { MuiInferencer } from "@pankod/refine-inferencer/mui";
+// import { MuiInferencer } from "@pankod/refine-inferencer/mui";
 import routerProvider from "@pankod/refine-react-router-v6";
 import dataProvider from "@pankod/refine-simple-rest";
 import axios, { AxiosRequestConfig } from "axios";

@@ -27,7 +27,7 @@ const Form = ({
 }: FormProps) => {
  return (
     <Box>
-      <Typography fontSize={25} fontWeight={750} color={"#252728"}>
+      <Typography fontSize={25} fontWeight={750} color={"#697089"}>
         {type} Property
       </Typography>
       <Box mt={2} borderRadius={5} padding={"20px"} bgcolor={"#FFFFFF"}>
@@ -46,7 +46,7 @@ const Form = ({
               sx={{
                 fontSize: 16,
                 fontWeight: 600,
-                color: "#252728",
+                color: "#697089",
                 margin: "0 0 10px 0",
               }}
             >
@@ -67,7 +67,7 @@ const Form = ({
               sx={{
                 fontSize: 16,
                 fontWeight: 600,
-                color: "#252728",
+                color: "#697089",
                 margin: "0 0 10px 0",
               }}
             >
@@ -84,8 +84,8 @@ const Form = ({
                 padding: "10px",
                 fontSize: "16px",
                 borderRadius: "8px",
-                border: "1px solid #252728",
-                color: "#252728",
+                border: "1px solid #697089",
+                color: "#697089",
                 backgroundColor: "#FFFFFF", 
               }}
             />
@@ -96,7 +96,7 @@ const Form = ({
                 sx={{
                  fontSize: 16,
                  fontWeight: 600,
-                 color: "#252728",
+                 color: "#697089",
                  margin: "0 0 10px 0",
                 }}
               >
@@ -129,7 +129,7 @@ const Form = ({
                 sx={{
                  fontSize: 16,
                  fontWeight: 600,
-                 color: "#252728",
+                 color: "#697089",
                  margin: "0 0 10px 0",
                 }}
               >
@@ -151,7 +151,7 @@ const Form = ({
               sx={{
                 fontSize: 16,
                 fontWeight: 600,
-                color: "#252728",
+                color: "#697089",
                 margin: "0 0 10px 0",
               }}
             >
@@ -171,7 +171,7 @@ const Form = ({
           <Stack direction="column" gap={2} mb={2} justifyContent={"center"}>
             <Stack direction="row" gap={2}>
               <Typography
-                color={"#252728"}
+                color={"#697089"}
                 fontWeight={600}
                 fontSize={16}
                 my={"10px"}
@@ -201,7 +201,7 @@ const Form = ({
             <Typography
               fontSize={16}
               fontWeight={600}
-              color={"#252728"}
+              color={"#697089"}
               variant="h6"
               sx={{ wordBreak: "break-all" }}
             >
@@ -211,7 +211,7 @@ const Form = ({
           <CustomButton
             type="submit"
             label={formLoading ? "Loading..." : "Submit"}
-            backgroundColor={"#252728"}
+            backgroundColor={"#697089"}
             color={"#fff"}
             // handleClick={() => {}}
           />

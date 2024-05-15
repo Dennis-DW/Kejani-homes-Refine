@@ -178,9 +178,9 @@ export const Sider: typeof DefaultSider = ({ render }) => {
                 py: isNested ? 1.25 : 1,
                 "&.Mui-selected": {
                   "&:hover": {
-                    backgroundColor: isSelected ? "#c6c5b9" : "transparent",
+                    backgroundColor: isSelected ? "#C7CBD8" : "transparent",
                   },
-                  backgroundColor: isSelected ? "#252728" : "transparent",
+                  backgroundColor: isSelected ? "#697089" : "transparent",
                 },
                 justifyContent: "center",
                 margin: "10px auto",
@@ -193,7 +193,7 @@ export const Sider: typeof DefaultSider = ({ render }) => {
                 sx={{
                   justifyContent: "center",
                   minWidth: 36,
-                  color: isSelected ? "#798264" : "#0d1321",
+                  color: isSelected ? "#0C0E19" : "#0d1321",
                 }}
               >
                 {icon ?? <ListOutlined />}
@@ -204,7 +204,7 @@ export const Sider: typeof DefaultSider = ({ render }) => {
                   noWrap: true,
                   fontSize: "16px",
                   fontWeight: isSelected ? "bold" : "normal",
-                  color: isSelected ? "#798264" : "#0d1321",
+                  color: isSelected ? "#0C0E19" : "#0d1321",
                   marginLeft: "10px",
                 }}
               />
@@ -362,7 +362,7 @@ export const Sider: typeof DefaultSider = ({ render }) => {
             display: { sm: "block", md: "none" },
             "& .MuiDrawer-paper": {
               width: 256,
-              bgcolor: "#c6c5b9",
+              bgcolor: "#C7CBD8",
             },
           }}
         >
@@ -385,7 +385,7 @@ export const Sider: typeof DefaultSider = ({ render }) => {
             display: { xs: "none", md: "block" },
             "& .MuiDrawer-paper": {
               width: drawerWidth,
-              bgcolor: "#c6c5b9",
+              bgcolor: "#C7CBD8",
               overflow: "hidden",
               transition: "width 200ms cubic-bezier(0.4, 0, 0.6, 1) 0ms",
             },
@@ -413,13 +413,13 @@ export const Sider: typeof DefaultSider = ({ render }) => {
           </Box>
           <Button
             sx={{
-              background: "#7d7d7d",
+              background: "#989EB3",
               color: "primary.contrastText",
               textAlign: "center",
               borderRadius: 0,
-              borderTop: "1px solid #798264fff1a",
+              borderTop: "1px solid #0C0E19fff1a",
               "&:hover": {
-                background: "#0d1321",
+                background: "#4A516D",
               },
             }}
             fullWidth
@@ -436,7 +436,7 @@ export const Sider: typeof DefaultSider = ({ render }) => {
             top: "64px",
             left: "0px",
             borderRadius: "0 6px 6px 0",
-            bgcolor: "#c6c5b9",
+            bgcolor: "#C7CBD8",
             zIndex: 1199,
             width: "36px",
           }}

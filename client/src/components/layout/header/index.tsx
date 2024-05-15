@@ -23,7 +23,7 @@ export const Header: React.FC = () => {
       color="default"
       position="sticky"
       elevation={0}
-      sx={{ background: "#c6c5b9" }}
+      sx={{ background: "#E6E8F0" }}
     >
       <Toolbar>
         <Stack

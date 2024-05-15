@@ -54,7 +54,7 @@ const PropertyDetails = () => {
 
       <Typography fontSize={25} fontWeight={700} color="#11142D">Details</Typography>
 
-      <Box mt="20px" display="flex" flexDirection={{ xs: 'column', lg: 'row' }} gap={4}>
+      <Box mt="40px" display="flex" flexDirection={{ xs: 'column', lg: 'row' }} gap={4}>
 
         <Box flex={1} maxWidth={764}>
           <img

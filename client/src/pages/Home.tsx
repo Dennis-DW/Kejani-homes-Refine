@@ -46,25 +46,25 @@ const Home = () => {
           title="Properties for Rent"
           value={600}
           series={[75, 25]}
-          colors={["#4715BE", "#c6c5b9"]}
+          colors={["#475BE8", "#989EB3"]}
         />
         <PieChart
           title="Properties for Sale"
           value={550}
           series={[50, 40]}
-          colors={["#4715BE", "#c6c5b9"]}
+          colors={["#475BE8", "#989EB3"]}
         />
         <PieChart
           title="Total Customers"
           value={550}
           series={[50, 40]}
-          colors={["#4715BE", "#c6c5b9"]}
+          colors={["#475BE8", "#989EB3"]}
         />
         <PieChart
           title="Properties for Cities"
           value={545}
           series={[60, 45]}
-          colors={["#4715BE", "#c6c5b9"]}
+          colors={["#475BE8", "#989EB3"]}
         />
       </Box>
       
@@ -90,7 +90,7 @@ const Home = () => {
           <Typography fontWeight={700} fontSize={25} color="#471d3f">
             Latest Properties
           </Typography>
-          <Box mt={2} sx={{ display: "flex", flexWrap: "wrap", gap: 2 }}>
+          <Box mt={2} sx={{ display: "flex", flexWrap: "wrap", gap: 5 }}>
             {/* Displaying each latest property as a card */}
             {latestProperties.map((property) => (
               <PropertyCard
