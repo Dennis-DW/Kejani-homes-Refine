@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import { useGetIdentity } from "@pankod/refine-core";
-import { useNavigate } from "@pankod/refine-react-router-v6";
+// import { useNavigate } from "@pankod/refine-react-router-v6";
 import { FieldValues, useForm } from "@pankod/refine-react-hook-form";
 import Form from "components/common/form";
 
 const CreateProperty = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { data: user } = useGetIdentity();
   const [propertyImage, setPropertyImage] = useState({ name: "", url: "" });
   const {

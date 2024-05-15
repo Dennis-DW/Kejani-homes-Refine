@@ -11,7 +11,7 @@ import {
 import { useNavigate } from "@pankod/refine-react-router-v6";
 import { PropertyCard, CustomButton } from "components";
 import { Add } from "@mui/icons-material";
-import { set } from "@pankod/refine-react-hook-form";
+// import { set } from "@pankod/refine-react-hook-form";
 
 const AllProperties = () => {
   const navigate = useNavigate();
