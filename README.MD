@@ -1,11 +1,10 @@
-```markdown
 # Kejani Homes
 
-## A Modern MERN Web App for Real Estate Management
+## Empowering Your Real Estate Journey
 
 ### Overview
 
-Kejani Homes is a powerful web application built with Refine, enabling CRUD functionalities for real estate management. It's a full-stack MERN (MongoDB, Express.js, React.js, Node.js) web app that streamlines the process of managing real estate properties.
+Kejani Homes is a powerful web application built using the Refine framework, which enables all CRUD (Create, Read, Update, Delete) functionalities. It is a full-stack MERN (MongoDB, Express.js, React.js, Node.js) web app designed to streamline real estate operations and enhance user experiences.
 
 ### Table of Contents
 
@@ -22,83 +21,88 @@ Kejani Homes is a powerful web application built with Refine, enabling CRUD func
 
 #### Client Side
 
-To set up the client-side of the project, follow these steps:
+To install the client-side dependencies, navigate to the client directory and run:
 
-1. Clone the repository.
-2. Navigate to the client directory (`cd client`).
-3. Install dependencies using npm:
-   ```bash
-   npm install
-   ```
-4. After installation, start the development server:
-   ```bash
-   npm start
-   ```
+```bash
+npm install
+```
 
-The client-side dependencies include:
-- `@mui/icons-material`
-- `@pankod/refine-cli`
-- `@pankod/refine-core`
-- `@pankod/refine-inferencer`
-- `@pankod/refine-mui`
-- `@pankod/refine-react-hook-form`
-- `@pankod/refine-react-router-v6`
-- `@pankod/refine-simple-rest`
-- and more.
+Client-side dependencies include:
+
+- "@mui/icons-material": "^5.8.3"
+- "@pankod/refine-cli": "^1.2.0"
+- "@pankod/refine-core": "^3.18.0"
+- "@pankod/refine-inferencer": "^2.0.2"
+- "@pankod/refine-mui": "^3.30.0"
+- "@pankod/refine-react-hook-form": "^3.27.1"
+- "@pankod/refine-react-router-v6": "^3.18.0"
+- "@pankod/refine-simple-rest": "^3.18.0"
+- "@testing-library/jest-dom": "^5.12.0"
+- "@testing-library/react": "^11.2.6"
+- "@testing-library/user-event": "^12.8.3"
+- "@types/jest": "^26.0.23"
+- "apexcharts": "^3.36.3"
+- "axios": "^0.26.1"
+- "react": "^18.2.0"
+- "react-apexcharts": "^1.4.0"
+- "react-dom": "^18.2.0"
+- "react-scripts": "^5.0.0"
+- "web-vitals": "^1.1.1"
 
 #### Server Side
 
-To set up the server-side of the project, follow these steps:
+To install the server-side dependencies, navigate to the server directory and run:
 
-1. Navigate to the server directory (`cd server`).
-2. Install dependencies using npm:
-   ```bash
-   npm install
-   ```
-3. After installation, start the server:
-   ```bash
-   npm start
-   ```
+```bash
+npm install
+```
 
-The server-side dependencies include:
-- `cloudinary`
-- `cors`
-- `dotenv`
-- `express`
-- `express-rate-limit`
-- `helmet`
-- `mongoose`
-- `nodemon`
+Server-side dependencies include:
+
+- "cloudinary": "^2.2.0"
+- "cors": "^2.8.5"
+- "dotenv": "^16.4.5"
+- "express": "^4.19.2"
+- "express-rate-limit": "^7.2.0"
+- "helmet": "^7.1.0"
+- "mongoose": "^8.3.2"
+- "nodemon": "^3.1.0"
 
 ### Usage
 
-#### Client Side Usage
+#### Client Side
 
-Once the client-side server is running, you can access the Kejani Homes web app in your browser. The app provides a user-friendly interface for managing real estate properties. You can perform CRUD operations on properties, view analytics, and more.
+To run the client-side of the project, navigate to the client directory and run:
 
-#### Server Side Usage
+```bash
+npm start
+```
 
-The server-side of the project handles data storage and retrieval, user authentication, and API endpoints. It communicates with the client-side to provide seamless interaction for users.
+#### Server Side
+
+To run the server-side of the project, navigate to the server directory and run:
+
+```bash
+npm start
+```
 
 ### Technologies Used
 
 - **Frontend**:
   - React.js
   - Material-UI
-  - Refine
   - ApexCharts
   - Axios
+  - Web Vitals
 
 - **Backend**:
   - Node.js
   - Express.js
-  - MongoDB
-  - Mongoose
-  - Cloudinary
+  - MongoDB (with Mongoose)
+  - Cloudinary (for image storage)
+  - Helmet (for HTTP headers)
+  - Cors (for cross-origin resource sharing)
 
 ### Additional Information
 
-Kejani Homes is designed to provide a comprehensive solution for real estate management. It offers a responsive and intuitive user interface, robust backend functionality, and seamless integration of modern web technologies.
-```
-
-Feel free to customize this README template to fit your project's specific details and requirements!
+Kejani Homes aims to revolutionize the real estate industry by providing a seamless and intuitive platform for property management, transactions, and customer interactions. Whether you're a real estate agent, property manager, or homeowner, Kejani Homes empowers you to make informed decisions and achieve your real estate goals effortlessly. 
