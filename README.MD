@@ -27,28 +27,6 @@ To install the client-side dependencies, navigate to the client directory and ru
 npm install
 ```
 
-Client-side dependencies include:
-
-- mui/icons-material: 5.8.3
-- pankod/refine-cli: 1.2.0
-- pankod/refine-core: 3.18.0
-- pankod/refine-inferencer: 2.0.2
-- pankod/refine-mui: 3.30.0
-- pankod/refine-react-hook-form: 3.27.1
-- pankod/refine-react-router-v6: 3.18.0
-- pankod/refine-simple-rest: 3.18.0
-- testing-library/jest-dom: 5.12.0
-- testing-library/react: 11.2.6
-- testing-library/user-event: 12.8.3
-- types/jest: 26.0.23
-- apexcharts: 3.36.3
-- axios: 0.26.1
-- react: 18.2.0
-- react-apexcharts: 1.4.0
-- react-dom: 18.2.0
-- react-scripts: 5.0.0
-- web-vitals: 1.1.1
-
 #### Server Side
 
 To install the server-side dependencies, navigate to the server directory and run:
@@ -57,16 +35,6 @@ To install the server-side dependencies, navigate to the server directory and ru
 npm install
 ```
 
-Server-side dependencies include:
-
-- cloudinary: 2.2.0
-- cors: 2.8.5
-- dotenv: 16.4.5
-- express: 4.19.2
-- express-rate-limit: 7.2.0
-- helmet: 7.1.0
-- mongoose: 8.3.2
-- nodemon: 3.1.0
 
 ### Usage
 
@@ -75,7 +43,7 @@ Server-side dependencies include:
 To run the client-side of the project, navigate to the client directory and run:
 
 ```bash
-npm start
+npm run dev
 ```
 
 #### Server Side
