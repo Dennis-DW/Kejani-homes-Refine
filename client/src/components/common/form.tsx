@@ -1,31 +1,29 @@
 import React from "react";
 import {
- Box,
- Typography,
- FormControl,
- InputLabel,
- Input,
- Button,
- FormHelperText,
- TextField,
- Stack,
- Select,
- MenuItem,
- TextareaAutosize,
+  Box,
+  Typography,
+  FormControl,
+  Input,
+  FormHelperText,
+  TextField,
+  Stack,
+  Select,
+  MenuItem,
+  TextareaAutosize,
 } from "@pankod/refine-mui";
 import { FormProps } from "interfaces/common";
 import CustomButton from "./customButton";
 
 const Form = ({
- type,
- register,
- handleSubmit,
- handleImageChange,
- formLoading,
- onFinishHandler,
- propertyImage,
+  type,
+  register,
+  handleSubmit,
+  handleImageChange,
+  formLoading,
+  onFinishHandler,
+  propertyImage,
 }: FormProps) => {
- return (
+  return (
     <Box>
       <Typography fontSize={25} fontWeight={750} color={"#697089"}>
         {type} Property
@@ -86,7 +84,7 @@ const Form = ({
                 borderRadius: "8px",
                 border: "1px solid #697089",
                 color: "#697089",
-                backgroundColor: "#FFFFFF", 
+                backgroundColor: "#FFFFFF",
               }}
             />
           </FormControl>
@@ -94,10 +92,10 @@ const Form = ({
             <FormControl>
               <FormHelperText
                 sx={{
-                 fontSize: 16,
-                 fontWeight: 600,
-                 color: "#697089",
-                 margin: "0 0 10px 0",
+                  fontSize: 16,
+                  fontWeight: 600,
+                  color: "#697089",
+                  margin: "0 0 10px 0",
                 }}
               >
                 Property Type
@@ -127,10 +125,10 @@ const Form = ({
             <FormControl>
               <FormHelperText
                 sx={{
-                 fontSize: 16,
-                 fontWeight: 600,
-                 color: "#697089",
-                 margin: "0 0 10px 0",
+                  fontSize: 16,
+                  fontWeight: 600,
+                  color: "#697089",
+                  margin: "0 0 10px 0",
                 }}
               >
                 Property Price
@@ -139,7 +137,7 @@ const Form = ({
                 {...register("price", { required: true })}
                 type="number"
                 placeholder="Property Price"
-                id="propertyPrice" 
+                id="propertyPrice"
                 variant="outlined"
                 color="info"
                 fullWidth
@@ -163,7 +161,7 @@ const Form = ({
               color="info"
               required
               placeholder="Property Location"
-              id="propertyLocation" 
+              id="propertyLocation"
               variant="outlined"
               fullWidth
             />
@@ -181,20 +179,20 @@ const Form = ({
 
               <Input
                 type="file"
-                accessKey="image"
+                // accessKey="image"
                 hidden
                 sx={{
-                 backgroundColor: "#FFFFFF",
-                 borderRadius: 1,
-                 textTransform: "capitalize",
-                 color: "#fff",
-                 "&:hover": {
+                  backgroundColor: "#FFFFFF",
+                  borderRadius: 1,
+                  textTransform: "capitalize",
+                  color: "#fff",
+                  "&:hover": {
                     backgroundColor: "transparent",
-                 },
+                  },
                 }}
                 onChange={(e) => {
-                 // @ts-ignore
-                 handleImageChange(e.target.files[0]);
+                  // @ts-ignore
+                  handleImageChange(e.target.files[0]);
                 }}
               />
             </Stack>
@@ -213,12 +211,12 @@ const Form = ({
             label={formLoading ? "Loading..." : "Submit"}
             backgroundColor={"#697089"}
             color={"#fff"}
-            // handleClick={() => {}}
+          // handleClick={() => {}}
           />
         </form>
       </Box>
     </Box>
- );
+  );
 };
 
 export default Form;

@@ -1,22 +1,16 @@
-import { DarkModeOutlined, LightModeOutlined } from "@mui/icons-material";
 import { useGetIdentity } from "@pankod/refine-core";
 import {
   AppBar,
   Avatar,
-  IconButton,
   Stack,
   Toolbar,
   Typography,
 } from "@pankod/refine-mui";
-import React, { useContext } from "react";
-
-import { ColorModeContext } from "contexts";
 
 export const Header: React.FC = () => {
-  const { mode, setMode } = useContext(ColorModeContext);
 
   const { data: user } = useGetIdentity();
-  const shouldRenderHeader = true; // since we are using the dark/light toggle; we don't need to check if user is logged in or not.
+  const shouldRenderHeader = true; // Set this to false to hide the header
 
   return shouldRenderHeader ? (
     <AppBar
@@ -32,13 +26,6 @@ export const Header: React.FC = () => {
           justifyContent="flex-end"
           alignItems="center"
         >
-          {/* <IconButton
-            onClick={() => {
-              setMode();
-            }}
-          >
-            {mode === "dark" ? <LightModeOutlined /> : <DarkModeOutlined />}
-          </IconButton> */}
           <Stack
             direction="row"
             gap="16px"
